@@ -1,8 +1,12 @@
 import 'package:artisan/common/welcome_text.dart';
 import 'package:artisan/common/welcome_title.dart';
 import 'package:artisan/constants/global_variables.dart';
+import 'package:artisan/sign_in_up/login_screen.dart';
+import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
 import 'package:artisan/sign_in_up/widget/input_textfield.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -27,13 +31,20 @@ class _SignupScreenState extends State<SignupScreen> {
     _phoneNumberController.dispose();
   }
 
+  moveToLoginScreen() {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => const LoginScreen(),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: GlobalVariables.backgroundColor,
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 81),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 81),
           child: Form(
             //Key left
             child: Column(
@@ -80,8 +91,61 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(
                   height: 23,
                 ),
+                // Country Code
+                CountryCodePicker(
+                  phoneNumberController: _phoneNumberController,
+                ),
+                // Button
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: GlobalVariables.welcomeTitleColor),
+                    child: const Center(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
                 Row(
-                  children: [],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text(
+                        "Already have an account?",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: moveToLoginScreen,
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        child: const Text(
+                          "Log in",
+                          style: TextStyle(
+                            color: GlobalVariables.welcomeTitleColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),

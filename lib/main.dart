@@ -1,6 +1,7 @@
 import 'package:artisan/constants/global_variables.dart';
 import 'package:artisan/sign_in_up/login_screen.dart';
 import 'package:artisan/sign_in_up/signup_screen.dart';
+import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,12 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: const ColorScheme.dark(
-          background: GlobalVariables.backgroundColor,
-          primary: GlobalVariables.backgroundColor,
-        ),
-        useMaterial3: true,
+            // background: GlobalVariables.backgroundColor, primary: Colors.black,
+            // secondary: Colors.black, tertiary: Colors.black,
+            // primary: GlobalVariables.backgroundColor,
+            ),
       ),
-      home: const SignupScreen(),
+      home: const LoginScreen(),
     );
   }
 }
