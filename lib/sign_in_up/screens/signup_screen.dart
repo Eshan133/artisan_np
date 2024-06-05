@@ -1,7 +1,7 @@
 import 'package:artisan/common/welcome_text.dart';
 import 'package:artisan/common/welcome_title.dart';
 import 'package:artisan/constants/global_variables.dart';
-import 'package:artisan/sign_in_up/login_screen.dart';
+import 'package:artisan/sign_in_up/screens/login_screen.dart';
 import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
 import 'package:artisan/sign_in_up/widget/input_textfield.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SignupScreen extends StatefulWidget {
+  static const String routeName = '/signup-screen';
   const SignupScreen({super.key});
 
   @override

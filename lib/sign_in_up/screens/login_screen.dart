@@ -1,11 +1,12 @@
 import 'package:artisan/common/welcome_text.dart';
 import 'package:artisan/common/welcome_title.dart';
 import 'package:artisan/constants/global_variables.dart';
-import 'package:artisan/sign_in_up/signup_screen.dart';
+import 'package:artisan/sign_in_up/screens/signup_screen.dart';
 import 'package:artisan/sign_in_up/widget/input_textfield.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  static const String routeName = '/login-screen';
   const LoginScreen({super.key});
 
   @override

@@ -1,7 +1,9 @@
 import 'package:artisan/constants/global_variables.dart';
-import 'package:artisan/sign_in_up/login_screen.dart';
-import 'package:artisan/sign_in_up/signup_screen.dart';
+import 'package:artisan/routes.dart';
+import 'package:artisan/sign_in_up/screens/login_screen.dart';
+import 'package:artisan/sign_in_up/screens/signup_screen.dart';
 import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
+import 'package:artisan/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      initialRoute: SplashScreen.routeName,
+      onGenerateRoute: (settings) => generateRoute(settings),
       theme: ThemeData(
         colorScheme: const ColorScheme.dark(
             // background: GlobalVariables.backgroundColor, primary: Colors.black,
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
             // primary: GlobalVariables.backgroundColor,
             ),
       ),
-      home: const LoginScreen(),
+      // home: const LoginScreen(),
     );
   }
 }
