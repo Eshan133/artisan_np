@@ -4,6 +4,7 @@ import 'package:artisan/constants/global_variables.dart';
 import 'package:artisan/sign_in_up/screens/login_screen.dart';
 import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
 import 'package:artisan/sign_in_up/widget/input_textfield.dart';
+import 'package:artisan/splash_entry/entry_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -41,6 +42,17 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: GlobalVariables.backgroundColor,
+        leading: BackButton(
+          color: GlobalVariables.welcomeTitleColor,
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const EntryScreen(),
+            ));
+          },
+        ),
+      ),
       backgroundColor: GlobalVariables.backgroundColor,
       body: SafeArea(
         child: Container(
@@ -54,6 +66,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 const WelcomeTitle(
                   welcomeTitle: "Create \nAccount",
                   welcomeTitleColor: GlobalVariables.welcomeTitleColor,
+                  welcomeTitleFontSize: 36,
+                  welcomeTitleFontFamily: 'Archivo',
+                  welcomeTitleFontWeight: FontWeight.w700,
                 ),
                 const SizedBox(
                   height: 28,

@@ -49,6 +49,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   const WelcomeTitle(
                     welcomeTitle: "Welcome \nBack!",
                     welcomeTitleColor: GlobalVariables.welcomeTitleColor,
+                    welcomeTitleFontSize: 36,
+                    welcomeTitleFontFamily: 'Archivo',
+                    welcomeTitleFontWeight: FontWeight.w700,
                   ),
                   const SizedBox(
                     height: 28,

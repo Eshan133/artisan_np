@@ -3,7 +3,8 @@ import 'package:artisan/routes.dart';
 import 'package:artisan/sign_in_up/screens/login_screen.dart';
 import 'package:artisan/sign_in_up/screens/signup_screen.dart';
 import 'package:artisan/sign_in_up/widget/country_code_picker.dart';
-import 'package:artisan/splash/splash_screen.dart';
+import 'package:artisan/splash_entry/entry_screen.dart';
+import 'package:artisan/splash_entry/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             // primary: GlobalVariables.backgroundColor,
             ),
       ),
-      // home: const LoginScreen(),
+      // home: const EntryScreen(),
     );
   }
 }
