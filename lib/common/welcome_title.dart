@@ -6,14 +6,17 @@ class WelcomeTitle extends StatelessWidget {
   final double welcomeTitleFontSize;
   final String welcomeTitleFontFamily;
   final FontWeight welcomeTitleFontWeight;
-  const WelcomeTitle({
-    super.key,
-    required this.welcomeTitle,
-    required this.welcomeTitleColor,
-    required this.welcomeTitleFontSize,
-    required this.welcomeTitleFontFamily,
-    required this.welcomeTitleFontWeight,
-  });
+  final double wordSpacing;
+  final double height;
+  const WelcomeTitle(
+      {super.key,
+      required this.welcomeTitle,
+      required this.welcomeTitleColor,
+      required this.welcomeTitleFontSize,
+      required this.welcomeTitleFontFamily,
+      required this.welcomeTitleFontWeight,
+      this.wordSpacing = 0,
+      this.height = 0.99});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,9 @@ class WelcomeTitle extends StatelessWidget {
         color: welcomeTitleColor,
         fontSize: welcomeTitleFontSize,
         fontFamily: welcomeTitleFontFamily,
-        height: 0.99,
+        height: height,
         fontWeight: welcomeTitleFontWeight,
+        wordSpacing: wordSpacing,
       ),
     );
   }

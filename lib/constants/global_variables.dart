@@ -7,4 +7,6 @@ class GlobalVariables {
   static const Color textBoxIconColor = Color(0xFF626262);
   static const Color textBoxTextColor = Color(0xFF676767);
   static const Color splashBgColor = Color(0xFFB85245);
+  static const Color locationIconColor = Color(0xFFB60328);
+  static const Color categoryColor = Color(0xFFFFDDCE);
 }

@@ -1,4 +1,5 @@
 import 'package:artisan/constants/global_variables.dart';
+import 'package:artisan/home_page/home_screen.dart';
 import 'package:artisan/routes.dart';
 import 'package:artisan/sign_in_up/screens/login_screen.dart';
 import 'package:artisan/sign_in_up/screens/signup_screen.dart';
@@ -20,8 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.routeName,
-      onGenerateRoute: (settings) => generateRoute(settings),
+      // initialRoute: SplashScreen.routeName,
+      // onGenerateRoute: (settings) => generateRoute(settings),
       theme: ThemeData(
         colorScheme: const ColorScheme.dark(
             // background: GlobalVariables.backgroundColor, primary: Colors.black,
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
             // primary: GlobalVariables.backgroundColor,
             ),
       ),
-      // home: const EntryScreen(),
+      home: const HomeScreen(),
     );
   }
 }
