@@ -1,4 +1,6 @@
+import 'package:artisan/common/stars.dart';
 import 'package:artisan/common/welcome_text.dart';
+import 'package:artisan/common/welcome_title.dart';
 import 'package:artisan/constants/global_variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +32,8 @@ class _AdvertisementSectionState extends State<AdvertisementSection> {
 
   List<String> images = [
     'assets/images/advertisement.png',
-    'assets/images/advertisement.png',
-    'assets/images/advertisement.png',
+    'assets/images/advertisement1.png',
+    'assets/images/advertisement2.png',
   ];
 
   List<String> names = ['Alice', 'Bob', 'Charlie', 'Dave', 'Eve'];
@@ -90,14 +92,10 @@ class _AdvertisementSectionState extends State<AdvertisementSection> {
       child: Stack(
         children: [
           GestureDetector(
-            onTap: () {
-              print('Image $index tapped');
-            },
+            onTap: () {},
             child: Container(
               height: pageViewContainer,
-              margin: EdgeInsets.only(
-                  left: 10,
-                  right: 10), // Replace Dimension.width10 with a real number
+              margin: const EdgeInsets.only(left: 10, right: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: Colors.red,
@@ -111,7 +109,7 @@ class _AdvertisementSectionState extends State<AdvertisementSection> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: pageViewTextContainer,
+              height: 85,
               margin: const EdgeInsets.only(
                 left: 30,
                 right: 30,
@@ -129,14 +127,66 @@ class _AdvertisementSectionState extends State<AdvertisementSection> {
                     BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
                   ]),
               child: Container(
-                margin: EdgeInsets.only(
-                    top: 15,
-                    left: 15,
-                    right: 15), // Replace Dimension.height15 with a real number
-                child: WelcomeText(
-                    welcomeText: 'welcomeText',
-                    welcomeTextColor: GlobalVariables
-                        .welcomeTitleColor), // Use the name from the list
+                margin: const EdgeInsets.only(
+                  top: 10,
+                  left: 40,
+                  right: 40,
+                  bottom: 10,
+                ),
+
+                // Section Inside the Container below carousel
+
+                // Heading
+                child: const Column(
+                  children: [
+                    WelcomeTitle(
+                        welcomeTitle: 'NepaCraft Studios',
+                        welcomeTitleColor: GlobalVariables.welcomeTitleColor,
+                        welcomeTitleFontSize: 16,
+                        welcomeTitleFontFamily: 'DM Sans',
+                        welcomeTitleFontWeight: FontWeight.w700),
+                    SizedBox(
+                      height: 6,
+                    ),
+
+                    // Star and Reviews
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stars(rating: 4),
+                        WelcomeTitle(
+                          welcomeTitle: '4.5/5 Reviews',
+                          welcomeTitleColor: GlobalVariables.textBoxIconColor,
+                          welcomeTitleFontSize: 10,
+                          welcomeTitleFontFamily: 'DM Sans',
+                          welcomeTitleFontWeight: FontWeight.w400,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+
+                    // Location
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: GlobalVariables.locationIconColor,
+                          size: 20,
+                        ),
+                        WelcomeTitle(
+                          welcomeTitle: 'Kupondole, Lalitpur, Nepal',
+                          welcomeTitleColor: GlobalVariables.textBoxIconColor,
+                          welcomeTitleFontSize: 10,
+                          welcomeTitleFontFamily: 'DM Sans',
+                          welcomeTitleFontWeight: FontWeight.w400,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           )

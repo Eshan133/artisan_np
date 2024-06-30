@@ -1,12 +1,13 @@
 import 'package:artisan/common/welcome_text.dart';
 import 'package:artisan/common/welcome_title.dart';
 import 'package:artisan/constants/global_variables.dart';
+import 'package:artisan/landing_page.dart';
 import 'package:artisan/splash_entry/widget/entry_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../sign_in_up/screens/signup_screen.dart';
+import '../auth/screens/signup_screen.dart';
 
 class EntryScreen extends StatefulWidget {
   static const String routeName = '/entry-screen';
@@ -21,6 +22,14 @@ class _EntryScreenState extends State<EntryScreen> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const SignupScreen(),
+      ),
+    );
+  }
+
+  moveToLandingScreen() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LandingPage(),
       ),
     );
   }
@@ -122,10 +131,13 @@ class _EntryScreenState extends State<EntryScreen> {
                               text: 'Sign In',
                             ),
                           ),
-                          const EntryButton(
-                            text: 'Get Started',
-                            textColor: Colors.white,
-                            bgColor: GlobalVariables.welcomeTitleColor,
+                          InkWell(
+                            onTap: moveToLandingScreen,
+                            child: const EntryButton(
+                              text: 'Get Started',
+                              textColor: Colors.white,
+                              bgColor: GlobalVariables.welcomeTitleColor,
+                            ),
                           ),
                         ],
                       ),

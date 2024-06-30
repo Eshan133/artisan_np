@@ -108,12 +108,13 @@ class _CategorySectionState extends State<CategorySection> {
                             borderRadius: BorderRadius.circular(12.5)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.5),
-                          // child: Image.asset(
-                          //     'assets/images/Artisan$index.png'),
+                          child: Image.asset(
+                              GlobalVariables.categoryImages1[index]['image']!),
                         ),
                       ),
                       WelcomeTitle(
-                        welcomeTitle: names[index],
+                        welcomeTitle: GlobalVariables.categoryImages1[index]
+                            ['title']!,
                         welcomeTitleColor: Colors.black,
                         welcomeTitleFontSize: 12,
                         welcomeTitleFontFamily: 'Open Sans',
@@ -152,12 +153,13 @@ class _CategorySectionState extends State<CategorySection> {
                             borderRadius: BorderRadius.circular(12.5)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.5),
-                          // child: Image.asset(
-                          //     'assets/images/Artisan$index.png'),
+                          child: Image.asset(
+                              GlobalVariables.categoryImages2[index]['image']!),
                         ),
                       ),
                       WelcomeTitle(
-                        welcomeTitle: names[index],
+                        welcomeTitle: GlobalVariables.categoryImages2[index]
+                            ['title']!,
                         welcomeTitleColor: Colors.black,
                         welcomeTitleFontSize: 12,
                         welcomeTitleFontFamily: 'Open Sans',

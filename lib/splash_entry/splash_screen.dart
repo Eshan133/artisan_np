@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:artisan/constants/global_variables.dart';
-import 'package:artisan/sign_in_up/screens/signup_screen.dart';
+import 'package:artisan/auth/screens/signup_screen.dart';
 import 'package:artisan/splash_entry/entry_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
